@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+
+    <head>
+        <title>Fallbeispiel</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="js/airports_data.js"></script>
+        <script src="js/routes_data.js"></script>
+        <script src="js/airlines_data.js"></script>
+        <script src="js/jsindex.js"></script>
+    </head>
+
+    <body>
+        <h1>Flugsuche in JavaScript</h1>
+        
+        <section>
+            <fieldset class="fieldsetSections">
+                <h2>Suchoptionen</h2>
+                <form>
+                    <fieldset class="Eingabemaske">
+                        <h3>Hinflug</h3>
+                        <label for="Datum">Datum</label>
+                        <input requiered type="date" name="Datum" id="date-from">
+                        <br/>
+
+                        <label for="Von">Von</label>
+                        <input  id="inputFieldFrom" requiered type="text" name="Von" list="myList">
+                        <datalist id="myList"></datalist>
+                        <br/>
+
+                        <label for="Nach">Nach</label>
+                        <input id="inputfildNach" requiered type="text" name="Nach" list="myList1">
+                        <datalist id="myList1"></datalist>
+
+                    </fieldset>
+
+                    <fieldset class="Eingabemaske">
+                            <div class="headingWithCheckbox">
+                                <input  id="backflight" type="checkbox" name="Rückflug-ja" checked>
+                                <h3>
+                                <label for="backflight">Rückflug</label>
+                                </h3>
+                            </div>
+                        
+                        <lable for="date">Datum</lable>
+                        <input class="backFlightCheck" type="date" name="date" value="date" id="rueckflugdatum">
+                        <br/>
+
+                        <label for="from">Von</label>
+                        <input class="backFlightCheck" type="text" name="from" id="from" list="myListBack">
+                        <datalist id="myListBack"></datalist>
+                        <br/>
+
+                        <label for="to">Nach</label>
+                        <input class="backFlightCheck" type="text" name="to" id="to" list="myListBackTo">
+                        <datalist id="myListBackTo"></datalist>
+                        <br/>
+                        
+                    </fieldset>
+
+                    <fieldset class="Eingabemaske">
+                        <label for="non-stop">Non-Stop</label>
+                        <input type="checkbox" name="non-stop" id="non-stop">
+                        <br/>
+
+                        <label for="max-price">Preis unter:</label>
+                        <input list="max-price" type="number" min="1" name="max-price" value="max-price">
+                        <datalist id="max-price"></datalist>
+                        <br/>
+
+                        <button id="submitButton" type="submit">Suche</button>
+                    </fieldset>
+
+                    
+                    
+                </form>
+            </fieldset>
+        </section>
+
+        <fieldset class="fieldsetSections">
+            <h2>Ihre Flug-Optionen</h2>
+            <div id="newPs">
+            </div>
+                <h3>Hinflug</h3>
+                <table id="flight-options" class="table">
+
+
+                </table>
+            
+            <div>
+                <h3>Rückflug</h3>
+                <table id="flight-options-rueckflug" class="table">
+
+
+                </table>
+            </div>
+        </fieldset>
+
+        <fieldset class="fieldsetSections">
+            <h2>Ihre Auswahl</h2>
+            <div id="flightInfoContainer">
+                <p>Sie fliegen von <strong id="startAirport"></strong>, <strong id="country"></strong> nach <strong id="endAirport"></strong>, <strong id="countryLanding"></strong>. Die voraussichtliche Flugzeit beträgt <span id="time"></span>. Der Flug wird von <strong id="airlineData"></strong> mit Sitz in <strong id="airlineCountry"></strong> durchgeführt.</p>
+                <p>Die Distanz beträgt: <strong id="distance"></strong>.</p>
+                <p>Abflug- und Zielort haben einen Höhenunterschied von: <strong id="height"></strong></p>
+            </div>
+        </fieldset>
+
+
+    </body>
+
+</html>
